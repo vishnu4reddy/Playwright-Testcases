@@ -1,0 +1,35 @@
+from playwright.sync_api import Page 
+import time
+
+
+def test_Msys(page: Page):
+    browser = page.chromium.launch()
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto("https://www.msystechnologies.com/")
+    page.locator(".nav-link").first.click()
+    page.get_by_role("link", name="Industries").click()
+    page.get_by_role("link", name="Solutions").click()
+    page.get_by_role("link", name="Resources").click()
+    page.locator("#navbarSupportedContent").get_by_role(
+        "link", name="Company").click()
+    snapshot = page.accessibility.snapshot()
+    print(snapshot)
+    time.sleep(3)
+    page.get_by_placeholder("Type a message...").fill("vishnu")
+    time.sleep(3)
+    page.get_by_placeholder("Type a message...").press("Enter")
+    time.sleep(3)
+    page.get_by_placeholder("Type a message...").fill("vishnuvardhanuv36@gmail.com")
+    time.sleep(3)
+    page.get_by_placeholder("Type a message...").press("Enter")
+    page.get_by_placeholder("Type a message...").fill("good")
+    page.get_by_placeholder("Type a message...").press("Enter")
+    page.get_by_placeholder("Type a message...").fill("job Seeker")
+    page.get_by_placeholder("Type a message...").press("Enter")
+    page.get_by_placeholder("Type a message...").fill("Careers Page")
+    page.get_by_placeholder("Type a message...").press("Enter")
+    page.get_by_placeholder("Type a message...").fill("Connect on Linkedin")
+    page.get_by_placeholder("Type a message...").press("Enter")
+    page.get_by_placeholder("Type a message...").press("Control+c")
+    page.goto("https://www.msystechnologies.com/")
