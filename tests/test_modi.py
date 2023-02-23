@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+
 import time
 from Data import imp
 name = imp.name
@@ -7,7 +7,7 @@ password = imp.password
 mobile_no = imp.mobile_no
 
 
-def test_example(page: Page):
+def test_example(page):
     page.goto("https://www.google.com/")
     page.get_by_role("combobox", name="Search").click()
     page.get_by_role("combobox", name="Search").fill("narendramodi")
@@ -67,7 +67,6 @@ def test_example(page: Page):
     # # page.keyboard.press("Enter")
 
     # time.sleep(10)
-
 
 
 # import pytest

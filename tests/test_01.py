@@ -10,7 +10,7 @@ def run(playwright: Playwright) -> None:
     page.locator("#leftmenuinnerinner").get_by_role("link", name="HTML Elements").click()
     with page.expect_popup() as page1_info:
         page.get_by_role("link", name="Try it Yourself »").nth(2).click()
-    page1 = page1_info.value
+    page = page1_info.value
 
     # ---------------------
     context.close()
