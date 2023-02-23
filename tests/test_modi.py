@@ -1,9 +1,6 @@
 
 import time
-name = imp.name
-Email = imp.username
-password = imp.password
-mobile_no = imp.mobile_no
+
 
 
 def test_example(page):
