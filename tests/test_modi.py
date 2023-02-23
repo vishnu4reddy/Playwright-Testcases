@@ -2,7 +2,6 @@
 import time
 
 
-
 def test_example(page):
     page.goto("https://www.google.com/")
     page.get_by_role("combobox", name="Search").click()
@@ -22,7 +21,8 @@ def test_example(page):
     page.get_by_role("link", name="Register Now").click()
     page.locator("//input[@id='edit-full-name']").fill("vishnu vardhan reddy")
     page.keyboard.press("Tab")
-    page.locator("//input[@id='edit-email']").fill("vishnuvardhanuv36@gmail.com")
+    page.locator(
+        "//input[@id='edit-email']").fill("vishnuvardhanuv36@gmail.com")
     page.keyboard.press("Tab")  # selecting India
     page.keyboard.press("Tab")   # going to next
     page.locator("//input[@id='edit-number']").fill("8247548679")
