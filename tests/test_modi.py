@@ -1,6 +1,5 @@
 
 import time
-from Data import imp
 name = imp.name
 Email = imp.username
 password = imp.password
@@ -16,20 +15,20 @@ def test_example(page):
         "//h3[contains(text(),'Narendra Modi | NarendraModi.in Official Website o')]").click()
     page.locator("//div[@class='login']//a[1]").click()
     page.locator("//input[@id='email_address']").click()
-    page.locator("//input[@id='email_address']").fill(Email)
+    page.locator("//input[@id='email_address']").fill()
     page.locator("//input[@id='password']").click()
-    page.locator("//input[@id='password']").fill(password)
+    page.locator("//input[@id='password']").fill("Chandra@12#")
     page.keyboard.press("Enter")
     print(page.url)
     # page.get_by_role("button", name="LOGIN").click()
     page.goto("https://auth.mygov.in/user/login?destination=oauth2/authorize")
     page.get_by_role("link", name="Register Now").click()
-    page.locator("//input[@id='edit-full-name']").fill(name)
+    page.locator("//input[@id='edit-full-name']").fill("vishnu vardhan reddy")
     page.keyboard.press("Tab")
-    page.locator("//input[@id='edit-email']").fill(Email)
+    page.locator("//input[@id='edit-email']").fill("vishnuvardhanuv36@gmail.com")
     page.keyboard.press("Tab")  # selecting India
     page.keyboard.press("Tab")   # going to next
-    page.locator("//input[@id='edit-number']").fill(mobile_no)
+    page.locator("//input[@id='edit-number']").fill("8247548679")
     page.keyboard.press("Tab")
     for i in range(16):
         page.keyboard.press("ArrowDown")
