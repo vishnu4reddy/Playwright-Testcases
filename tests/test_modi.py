@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 import time
 
 
-def test_example(page:Page):
+def test_example(page: Page):
     page.goto("https://www.google.com/")
     page.get_by_role("combobox", name="Search").click()
     page.get_by_role("combobox", name="Search").fill("narendramodi")

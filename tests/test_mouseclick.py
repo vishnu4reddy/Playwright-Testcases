@@ -1,8 +1,8 @@
-from playwright.sync_api import sync_playwright, Page
+
 import time
 
 
-def test_amazon(page: Page):
+def test_amazon(page):
     page.goto("https://aws.amazon.com/")
     # locator = page.locator("div")
     # more_than_ten = locator.evaluate_all("(divs, min) => divs.length > min", 10)
